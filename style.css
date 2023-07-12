@@ -1,0 +1,22 @@
+fieldset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 30%;
+}
+
+input{
+    width: 80%;
+    padding: 7px 14px;
+}
+
+input[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    margin-top: 12px;
+    width: 70%;
+}
