@@ -34,8 +34,8 @@ class DatabaseConnection {
 
     public function execute_query($query, $params=[]){
         $statement = $this->connection->prepare($query);
-        $results = $statement->execute($params);
-        return $results;
+        $statement->execute($params);
+        return $statement;
     }
 
     

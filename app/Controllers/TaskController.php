@@ -25,14 +25,47 @@ class TaskController{
             $data['title'],
             $data['description']
         ]);
-        print_r($results);
+ 
 
-        if (!empty($results)) {
-            echo "Se realizó exitosamente";
-        } else {
-            echo "ocurrio un error en el registro";
-        };
+        // if (!empty($results)) {
+        //     echo "Se realizó exitosamente";
+        // } else {
+        //     echo "ocurrio un error en el registro";
+        // };
     }
   
+    public function indexTask(){
+        $server = '127.0.0.1';
+        $username = 'root';
+        $password = '';
+        $database = 'todo';
+
+        $db = new DatabaseConnection($server, $username, $password, $database);
+        $db->connect();
+
+        $query = "SELECT * FROM task";
+        $results= $db-> execute_query($query)-> fetchAll(\PDO::FETCH_ASSOC);
+        if (empty($results)){
+            echo "Ooops something went wrong :/";
+        };
+        return $results;
+
+       
+    }
+
+    public function deleteTask(){
+        $server = '127.0.0.1';
+        $username = 'root';
+        $password = '';
+        $database = 'todo';
+
+        $db = new DatabaseConnection($server, $username, $password, $database);
+        $db->connect();
+
+        $query = "DELETE FROM task WHERE id = ?";
+       
+    }
+
+
 }
 ?>
