@@ -18,11 +18,10 @@ class TaskController{
         $db = new DatabaseConnection($server, $username, $password, $database);
         $db->connect();
 
-        $query = "INSERT INTO task ( id, title, description)
-                VALUES (?,?,?)";
+        $query = "INSERT INTO task ( title, description)
+                VALUES (?,?)";
 
         $results = $db->execute_query($query, [
-            $data['id'],
             $data['title'],
             $data['description']
         ]);
