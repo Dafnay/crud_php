@@ -97,39 +97,39 @@ if (isset($_POST["edit_submit"])) {
 
     <script>
     function handleEditButtonClick(id, title, description) {
-        var form = document.createElement("form");
+        const form = document.createElement("form");
         form.method = "POST";
         form.action = "./index.php";
 
-        var editIdField = document.createElement("input");
+        const editIdField = document.createElement("input");
         editIdField.type = "hidden";
         editIdField.name = "edit_id";
         editIdField.value = id;
         form.appendChild(editIdField);
 
-        var editTitleLabel = document.createElement("label");
+        const editTitleLabel = document.createElement("label");
         editTitleLabel.innerHTML = "Title";
         form.appendChild(editTitleLabel);
 
-        var editTitleField = document.createElement("input");
+        const editTitleField = document.createElement("input");
         editTitleField.type = "text";
         editTitleField.name = "edit_title";
         editTitleField.value = title;
         editTitleField.required = true;
         form.appendChild(editTitleField);
 
-        var editDescriptionLabel = document.createElement("label");
+        const editDescriptionLabel = document.createElement("label");
         editDescriptionLabel.innerHTML = "Description";
         form.appendChild(editDescriptionLabel);
 
-        var editDescriptionField = document.createElement("input");
+        const editDescriptionField = document.createElement("input");
         editDescriptionField.type = "text";
         editDescriptionField.name = "edit_description";
         editDescriptionField.value = description;
         editDescriptionField.required = true;
         form.appendChild(editDescriptionField);
 
-        var editSubmitButton = document.createElement("input");
+        const editSubmitButton = document.createElement("input");
         editSubmitButton.type = "submit";
         editSubmitButton.name = "edit_submit";
         editSubmitButton.value = "Save";
